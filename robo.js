@@ -1,5 +1,13 @@
 // leitor de qr code
 const qrcode = require('qrcode-terminal');
+const puppeteer = require("puppeteer");
+
+(async () => {
+  const browser = await puppeteer.launch({
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
+})();
+
 const { Client, Buttons, List, MessageMedia } = require('whatsapp-web.js'); // Mudança Buttons
 const client = new Client();
 // serviço de leitura do qr code
