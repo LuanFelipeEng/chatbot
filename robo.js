@@ -1,6 +1,7 @@
 // leitor de qr code
 const qrcode = require('qrcode-terminal');
 const puppeteer = require("puppeteer");
+const QRCode = require('qrcode');
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -14,6 +15,14 @@ const client = new Client();
 client.on('qr', qr => {
     qrcode.generate(qr, {small: true});
 });
+
+
+client.on('qr', (qr) => {
+  QRCode.toDataURL(qr, (err, url) => {
+    console.log('QR Code URL:', url);
+  });
+});
+
 // apos isso ele diz que foi tudo certo
 client.on('ready', () => {
     console.log('Tudo certo! WhatsApp conectado.');
