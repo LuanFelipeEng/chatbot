@@ -13,6 +13,8 @@ const client = new Client();
 // serviço de leitura do qr code
 client.on('qr', qr => {
     qrcode.generate(qr, {small: true});
+  qrcode.toDataUrl(qr,(err,url) =>{
+console.log('QR Code URL:', url);});
 });
 
 // apos isso ele diz que foi tudo certo
