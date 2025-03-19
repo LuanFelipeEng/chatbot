@@ -76,7 +76,7 @@ client.on('message', async msg => {
         //const video1 = MessageMedia.fromFilePath('./video1.mp4'); //vídeo 01
         //await client.sendMessage(msg.from, video1, {caption: ''});
 
-        const documento1 = MessageMedia.fromFilePath('./Pdf.pdf'); // pdf para ser enviado
+        const documento1 = MessageMedia.fromFilePath('./pdf.pdf'); // pdf para ser enviado
         await client.sendMessage(msg.from, documento1); //Enviando o pdf
 
 
